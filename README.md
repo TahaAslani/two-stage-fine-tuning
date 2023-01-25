@@ -27,6 +27,8 @@ Run Vanilla Fine-tuning (full)
 python two_stage.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
 ```
 
+The results of each experiment will be saved in CSV in the corresponding folders.
+
 ### Cite as:
 ```
 @misc{https://doi.org/10.48550/arxiv.2207.10858,
