@@ -20,11 +20,11 @@ python down_sample.py -i SST-2 -o down_sampled
 ## Run the experiments
 Run Two-stage Fine-tuning with reweighting
 ```
-python two_stage.py --data-path down_sampled/0.2 --output-path results/Two-stage --epoch-stage-1 1 --epoch-stage-2 1
+python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Two-stage --epoch-stage-1 1 --epoch-stage-2 1
 ```
 Run Vanilla Fine-tuning (full)
 ```
-python two_stage.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
+python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
 ```
 
 The results of each experiment will be saved in CSV in the corresponding folders.
