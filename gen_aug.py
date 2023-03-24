@@ -1,10 +1,9 @@
+import os
 import openai
 import argparse
-from time import sleep
-import pandas as pd
 import numpy as np
-import os
-
+import pandas as pd
+from time import sleep
 
 """Get arguments"""
 
