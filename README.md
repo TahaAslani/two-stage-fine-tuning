@@ -27,7 +27,7 @@ python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/
 First download the augmented data from the link below and put it in the "down_sampled/0.2" folder
 https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing
 
-Alternatively, you can generate the augmented data using the following command. YOu need to provide your OpenAI API Key as a text string
+Alternatively, you can generate the augmented data using the following command. You need to provide your OpenAI API Key as a text string
 ```
 python gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
 ```
