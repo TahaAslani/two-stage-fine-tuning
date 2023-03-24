@@ -24,6 +24,8 @@ python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/
 ```
 
 ### Run Two-stage Fine-tuning with chatGPT augmented data
+First download the augmented data from the link below and put it in the down_sampled/0.2 folder
+
 ```
 python two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
 ```
