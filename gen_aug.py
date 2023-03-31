@@ -30,8 +30,6 @@ def gen_aug(text):
 
     response = ""
     
-    response = ""
-    
     # prompt = (prompt_start + "\n\n---\n\n".join(contexts))
     
     prompt = (prompt_start + "\n\n---\n\n" + text)
