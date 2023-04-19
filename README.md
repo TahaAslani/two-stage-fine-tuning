@@ -38,7 +38,7 @@ After obtaining the augmented data, run the the experiment
 python two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
 ```
 
-### Run Vanilla Fine-tuning (full)
+### Run Vanilla Fine-tuning
 ```
 python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
 ```
