@@ -6,48 +6,36 @@ import pandas as pd
 from time import sleep
 
 """Get arguments"""
-
 parser = argparse.ArgumentParser(description='Down sample SST-2 data')
-
 parser.add_argument('--data-path', '-d', required=True, type=str,
     help='Directory path for the data.')
 parser.add_argument('--api-key', '-k', required=True, type=str,
     help='OpenAI API Key')
-
 args = parser.parse_args()
-
 data_path = args.data_path
 api_key = args.api_key
 
-
+# Set OpenAI key:
 openai.api_key = api_key
 
-
+# Define genereate augmented data function:
 def gen_aug(text):
     
-
+    # The first part of prompt:
     prompt_start = prompt_start = "Rephrase the following phrase into a different phrase with similar meaning."
-
-    response = ""
     
-    # prompt = (prompt_start + "\n\n---\n\n".join(contexts))
-    
+    # Full prompt:
     prompt = (prompt_start + "\n\n---\n\n" + text)
 
-    """
-    result = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo", 
-            messages=[{"role": "user", "content": f"{prompt}"}]
-        )
-    """
+    response = ""
 
+    # Set flag to true
     flag = True
     len_cut = int(len(prompt)*0.1)
 
     while flag:
 
         try:
-
             result = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[{"role": "user", "content": prompt}]
@@ -55,26 +43,23 @@ def gen_aug(text):
             flag = False
 
         except:
-
             prompt = prompt[:-len_cut]
-
 
     response = result["choices"][0]["message"]["content"]
     
     return response
 
-
+# If we are continuing augmented data generation:
 if os.path.isfile(os.path.join(data_path,'tmp.csv')):
 
     # Load data
-
     df = pd.read_csv(os.path.join(data_path,'tmp.csv'))
     data_count = pd.read_csv(os.path.join(data_path,'data_count.csv'))
 
+# If we start generating data augmentation:
 else:
 
     # Initialize data
-
     df = pd.read_csv(os.path.join(data_path,'train.csv'))
     df['num_aug_gen'] = 0
 
