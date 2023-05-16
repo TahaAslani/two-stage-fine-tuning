@@ -82,14 +82,12 @@ while np.sum(data_count['aug']<n_aug*1.01)>0:
         if data_count.loc[l, 'aug']>n_aug*1.01:
             continue
 
-
         print(i,'/',len(df))
 
         text = df.loc[i,'text']
 
         # Delay to bypass rate limitation
         sleep(1)
-
 
         try:
 
@@ -106,7 +104,6 @@ while np.sum(data_count['aug']<n_aug*1.01)>0:
         except:
 
             sleep(60)
-
             error_count = error_count + 1
     
             if error_count>5:
@@ -115,17 +112,11 @@ while np.sum(data_count['aug']<n_aug*1.01)>0:
         df.to_csv(os.path.join(data_path,'tmp.csv'), index=False)
         data_count.to_csv(os.path.join(data_path,'data_count.csv'), index=False)
 
-
-
-
-
-
+        
 aug_cols = []
 
 for col in df.columns:
-    
     if col.startswith('tmp_aug'):
-
        	aug_cols.append(col)
 
 NaNs = df.isna()
@@ -133,15 +124,13 @@ NaNs = df.isna()
 all_data = pd.DataFrame(columns=['org_ind', 'paragraph', 'label',])
 
 counter = 0
-
 for i in df.index:
     
     l = df.loc[i, 'label']
     
     for col in aug_cols:
-
-       	if not NaNs.loc[i, col]:
-
+       	
+        if not NaNs.loc[i, col]:
             all_data.loc[counter, 'org_ind'] = i
             all_data.loc[counter, 'paragraph'] = df.loc[i, col]
             all_data.loc[counter, 'label'] = int(l)
@@ -151,16 +140,10 @@ for i in df.index:
 out = pd.DataFrame(columns=['org_ind', 'paragraph', 'label',])
 
 for l in set(all_data['label']):
-    
     data_label = all_data.loc[all_data['label']==l, :]
-    
     data_label_sampled = data_label.sample(n=n_aug, random_state=42)
-    
     out = pd.concat([out, data_label_sampled])
     
-
 out.rename(columns={'paragraph': "text"}, inplace=True)
-
 out_shuff = out.sample(frac=1, random_state=42).reset_index(drop=True)
-
 out_shuff.to_csv(os.path.join(data_path,'aug.csv'), index=False)
