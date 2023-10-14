@@ -152,6 +152,7 @@ for i in df.index:
     for col in aug_cols:
        	
         if not NaNs.loc[i, col]:
+            
             all_data.loc[counter, 'org_ind'] = i
             all_data.loc[counter, 'paragraph'] = df.loc[i, col]
             all_data.loc[counter, 'label'] = int(l)
