@@ -31,9 +31,10 @@ Alternatively, you can generate the augmented data using the following command. 
 ```
 python gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
 ```
+Where $OPEN_AI_API_KEY is your Open AI APKI key for charging.
 Note that generating augmented data will take a long time. Moreover, due to the stochastic nature of chatGPT, the generated data will not be the same as the data used in the paper.
 
-After obtaining the augmented data, run the the experiment
+After obtaining the augmented data, run the experiment
 ```
 python two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
 ```
