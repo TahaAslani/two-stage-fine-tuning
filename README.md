@@ -1,18 +1,18 @@
 # Two-stage-fine-tuning
 
-## Install dependancies
+## Install dependencies
 ```
 pip install torch
 pip install transformers
 ```
-The codes were tested with transformes version 4.13.0 and torch version 1.8.1 with a compatible cuda.
+The codes were tested with transformers version 4.13.0 and torch version 1.8.1 with a compatible cuda.
 ## Prepare data
 Download and unzip the SST-2 data from GLUE
 ```
 wget https://dl.fbaipublicfiles.com/glue/data/SST-2.zip
 unzip SST-2.zip
 ```
-Down sample data
+Downsample data
 ```
 python down_sample.py -i SST-2 -o down_sampled
 ```
@@ -24,7 +24,7 @@ python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/
 ```
 
 ### Run Two-stage Fine-tuning with chatGPT augmented data
-First download the augmented data from the link below and put it in the "down_sampled/0.2" folder
+First, download the augmented data from the link below and put it in the "down_sampled/0.2" folder
 https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing
 
 Alternatively, you can generate the augmented data using the following command. You need to provide your OpenAI API Key as a text string
