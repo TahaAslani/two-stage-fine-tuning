@@ -10,7 +10,7 @@ unzip main.zip
 
 Go to the main directory
 ```
-cd Breadcrumbstwo-stage-fine-tuning-main
+cd two-stage-fine-tuning-main
 ```
 
 Install dependencies
