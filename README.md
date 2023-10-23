@@ -1,12 +1,25 @@
 # Two-stage-fine-tuning
 A novel deep learning strategy for learning class-imbalanced data
 
-## Install dependencies
+## Install
+Download the repo and unzip
+```
+wget https://github.com/TahaAslani/RandomTextEdit/archive/refs/heads/main.zip
+unzip main.zip
+```
+
+Go to the main directory
+```
+cd RandomTextEdit-main
+```
+
+Install dependencies
 ```
 pip install torch
 pip install transformers
 ```
 The codes were tested with transformers version 4.13.0 and torch version 1.8.1 with a compatible cuda.
+
 ## Prepare data
 Download and unzip the SST-2 data from GLUE
 ```
