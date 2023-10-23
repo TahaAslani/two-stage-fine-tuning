@@ -1,4 +1,5 @@
 # Two-stage-fine-tuning
+A novel deep learning strategy for learning class-imbalanced data
 
 ## Install dependencies
 ```
