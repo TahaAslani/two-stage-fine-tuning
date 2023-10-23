@@ -36,7 +36,7 @@ python down_sample.py -i SST-2 -o down_sampled
 ### Run Two-stage Fine-tuning with chatGPT augmented data
 First, download the augmented data and put it in the "down_sampled/0.2" folder
 ```
-wget --no-check-certificate 'https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing' -O ddown_sampled/0.2/aug.csv
+wget --no-check-certificate 'https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing' -O down_sampled/0.2/aug.csv
 ```
 
 Alternatively, you can generate the augmented data using the following command. You need to provide your OpenAI API Key as a text string
