@@ -36,16 +36,18 @@ python down_sample.py -i SST-2 -o down_sampled
 ### Run Two-stage Fine-tuning with chatGPT augmented data
 First, download the augmented data and put it in the "down_sampled/0.2" folder
 ```
-wget --no-check-certificate 'https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing' -O down_sampled/0.2/aug.csv
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB' -O down_sampled/0.2/aug.csv
 ```
+Alternatively, you can manually download the augmented data from the link below and put it in the "down_sampled/0.2" folder
+https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing
 
-Alternatively, you can generate the augmented data using the following command. You need to provide your OpenAI API Key as a text string
+If you want to generate the augmented data, you can use the following command. You need to provide your OpenAI API Key as a text string
 ```
 python gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
 ```
 Where $OPEN_AI_API_KEY is your OpenAI APKI key for charging.
 
-Note that generating augmented data will take a long time. Moreover, due to the stochastic nature of chatGPT, the generated data will not be the same as the data used in the paper.
+Note that generating augmented data will take a long time. Moreover, due to the stochastic nature of chatGPT, the generated data will not be the same as the data used in the paper. As a consequence, the final results will change slightly.
 
 After obtaining the augmented data, run the experiment
 ```
