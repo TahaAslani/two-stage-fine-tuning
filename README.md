@@ -4,13 +4,13 @@ A novel deep learning strategy for learning class-imbalanced data
 ## Install
 Download the repo and unzip
 ```
-wget https://github.com/TahaAslani/RandomTextEdit/archive/refs/heads/main.zip
+wget https://github.com/TahaAslani/two-stage-fine-tuning/archive/refs/heads/main.zip
 unzip main.zip
 ```
 
 Go to the main directory
 ```
-cd RandomTextEdit-main
+cd Breadcrumbstwo-stage-fine-tuning-main
 ```
 
 Install dependencies
