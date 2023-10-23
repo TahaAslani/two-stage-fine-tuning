@@ -32,10 +32,6 @@ python down_sample.py -i SST-2 -o down_sampled
 ```
 
 ## Run the experiments
-### Run Two-stage Fine-tuning with reweighting
-```
-python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Two-stage-reweight --epoch-stage-1 1 --epoch-stage-2 1
-```
 
 ### Run Two-stage Fine-tuning with chatGPT augmented data
 First, download the augmented data from the link below and put it in the "down_sampled/0.2" folder
@@ -52,6 +48,11 @@ Note that generating augmented data will take a long time. Moreover, due to the 
 After obtaining the augmented data, run the experiment
 ```
 python two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
+```
+
+### Run Two-stage Fine-tuning with reweighting
+```
+python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Two-stage-reweight --epoch-stage-1 1 --epoch-stage-2 1
 ```
 
 ### Run Vanilla Fine-tuning
