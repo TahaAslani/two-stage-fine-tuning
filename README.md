@@ -39,6 +39,7 @@ First, download the augmented data and put it in the "down_sampled/0.2" folder
 wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB' -O down_sampled/0.2/aug.csv
 ```
 Alternatively, you can manually download the augmented data from the link below and put it in the "down_sampled/0.2" folder
+
 https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=sharing
 
 If you want to generate the augmented data, you can use the following command. You need to provide your OpenAI API Key as a text string
