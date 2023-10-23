@@ -23,7 +23,7 @@ unzip SST-2.zip
 ```
 Downsample data
 ```
-python down_sample.py -i SST-2 -o down_sampled
+python two-stage-fine-tuning-main/down_sample.py -i SST-2 -o down_sampled
 ```
 
 ## Run the experiments
