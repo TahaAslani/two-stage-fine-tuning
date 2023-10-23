@@ -8,11 +8,6 @@ wget https://github.com/TahaAslani/two-stage-fine-tuning/archive/refs/heads/main
 unzip main.zip
 ```
 
-Go to the main directory
-```
-cd two-stage-fine-tuning-main
-```
-
 Install dependencies
 ```
 pip install torch
@@ -46,7 +41,7 @@ https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=shari
 #### Generating augmented data using ChatGPT (skip to Running the pipeline if you already downloaded the augmented data)
 If you want to generate the augmented data, you can use the following command. You need to provide your OpenAI API Key as a text string
 ```
-python gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
+python two-stage-fine-tuning-main/gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
 ```
 Where $OPEN_AI_API_KEY is your OpenAI APKI key for charging.
 
@@ -55,17 +50,17 @@ Note that generating augmented data will take a long time. Moreover, due to the 
 #### Running the pipeline
 After obtaining the augmented data, run the experiment
 ```
-python two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
+python two-stage-fine-tuning-main/two_stage_aug.py --data-path down_sampled/0.2 --output-path results/Two-stage-chatGPT --epoch-stage-1 1 --epoch-stage-2 1
 ```
 
 ### Run Two-stage Fine-tuning with reweighting
 ```
-python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Two-stage-reweight --epoch-stage-1 1 --epoch-stage-2 1
+python two-stage-fine-tuning-main/two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Two-stage-reweight --epoch-stage-1 1 --epoch-stage-2 1
 ```
 
 ### Run Vanilla Fine-tuning
 ```
-python two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
+python two-stage-fine-tuning-main/two_stage_reweight.py --data-path down_sampled/0.2 --output-path results/Vanilla --epoch-stage-1 0 --epoch-stage-2 1
 ```
 
 The results of each experiment will be saved in CSV in the corresponding folders.
