@@ -41,6 +41,7 @@ https://drive.google.com/file/d/1PyTdS9Ev_OhsU2WQSQWRxBw8TV8Z27tB/view?usp=shari
 #### Generating augmented data using ChatGPT (skip to Running the pipeline if you already downloaded the augmented data)
 If you want to generate the augmented data, you can use the following command. You need to provide your OpenAI API Key as a text string
 ```
+pip install openai
 python two-stage-fine-tuning-main/gen_aug.py --data-path down_sampled/0.2 --api-key $OPEN_AI_API_KEY
 ```
 Where $OPEN_AI_API_KEY is your OpenAI APKI key for charging.
