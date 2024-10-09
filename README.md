@@ -1,5 +1,5 @@
 # Two-stage-fine-tuning
-This is the official code for the "Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data". The Paper can be found here:
+This is the official code for the "Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data". The paper can be found here:
 https://www.sciencedirect.com/science/article/pii/S0925231224005721
 
 ## Install
