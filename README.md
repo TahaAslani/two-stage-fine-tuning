@@ -1,5 +1,6 @@
 # Two-stage-fine-tuning
-A novel deep learning strategy for learning class-imbalanced data
+This is the official code for the "Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data". The Paper can be found here:
+https://www.sciencedirect.com/science/article/pii/S0925231224005721
 
 ## Install
 Download the repo and unzip
@@ -68,13 +69,16 @@ The results of each experiment will be saved in CSV in the corresponding folders
 
 ## Cite as:
 ```
-@misc{https://doi.org/10.48550/arxiv.2207.10858,
-  doi = {10.48550/ARXIV.2207.10858},
-  url = {https://arxiv.org/abs/2207.10858},
-  author = {ValizadehAslani, Taha and Shi, Yiwen and Wang, Jing and Ren, Ping and Zhang, Yi and Hu, Meng and Zhao, Liang and Liang, Hualou},
-  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Two-Stage Fine-Tuning: A Novel Strategy for Learning Class-Imbalanced Data},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}}
+@article{VALIZADEHASLANI2024127801,
+title = {Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data},
+journal = {Neurocomputing},
+volume = {592},
+pages = {127801},
+year = {2024},
+issn = {0925-2312},
+doi = {https://doi.org/10.1016/j.neucom.2024.127801},
+url = {https://www.sciencedirect.com/science/article/pii/S0925231224005721},
+author = {Taha ValizadehAslani and Yiwen Shi and Jing Wang and Ping Ren and Yi Zhang and Meng Hu and Liang Zhao and Hualou Liang},
+keywords = {Imbalanced data. Machine learning. Natural language processing. Data augmentation. Reweighting. BERT}
+}
 ```
